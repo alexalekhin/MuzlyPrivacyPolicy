@@ -159,7 +159,7 @@
             <p class="updated">Last updated: October 30, 2026</p>
 
             <h2>Who we are</h2>
-            <p>Muzly (“the App”) is a music player for Android and iOS made by Aleksandr Alekhin, an individual developer (“we”). Contact: <a href="mailto:lolka132@gmail.com">lolka132@gmail.com</a>.</p>
+            <p>Muzly (“the App”) is a music player for Android and iOS made by an individual developer (“we”). Contact: <a href="mailto:lolka132@gmail.com">lolka132@gmail.com</a>.</p>
             <p>Muzly has no servers of its own. Your library, playlists and history are stored on your device. The App talks to VK and to the few public services listed below.</p>
 
             <h2>In short</h2>
@@ -172,27 +172,17 @@
                 <li>We do not sell data and do not show ads.</li>
             </ul>
 
-            <h2>Signing in with VK</h2>
-            <p>You sign in on the VK ID page (<code>id.vk.ru</code>), opened in the App’s built-in browser, and type your password there, not in the App. VK gives the App access tokens, which the App keeps on your device so that you stay signed in. The built-in browser keeps VK’s cookies. VK may ask you to pass its “I’m not a robot” check.</p>
-
-            <h2>What is sent to VK</h2>
-            <p>To show and play your music, the App sends requests to VK (<code>api.vk.ru</code>) on your behalf, with your VK session:</p>
-            <ul>
-                <li>your library, playlists, likes and other changes you make;</li>
-                <li>search queries;</li>
-                <li>recommendations and their settings;</li>
-                <li>audiobook progress;</li>
-                <li>listening reports — which track was played and for how long, the same reports the official VK music apps send (VK uses them for recommendations).</li>
-            </ul>
-            <p>Requests carry device details in the User-Agent (Android or iOS version, device model, language, screen size) and a random device identifier that the App generates itself. Music and pictures are downloaded from VK’s content servers. VK processes this data under its own <a href="https://vk.com/privacy" target="_blank" rel="noopener">privacy policy</a>.</p>
+            <h2>Signing in and VK</h2>
+            <p>You sign in on VK’s own page and type your password there — the App never sees it. VK gives the App access tokens, which are kept on your device so that you stay signed in.</p>
+            <p>To show and play your music, the App talks to VK on your behalf: it loads your library, playlists, recommendations and audiobooks, and sends your search queries, your changes (likes, playlists) and listening information. Requests carry technical device details (model, system version, language) and an identifier that the App generates itself. VK processes this data under its own <a href="https://vk.com/privacy" target="_blank" rel="noopener">privacy policy</a>.</p>
 
             <h2>Other services</h2>
             <p>The App contacts these services without your VK account and without any identifier. Like any website, they see your IP address.</p>
             <ul>
-                <li><strong>Deezer</strong> (<code>api.deezer.com</code>) and <strong>iTunes Search</strong> (<code>itunes.apple.com</code>) — artist and track title (also of local files on your device) to find album covers, artist photos and album names when VK has none. Which of the two is used is chosen in Settings → Cover source.</li>
-                <li><strong>LRCLIB</strong> (<code>lrclib.net</code>) — artist, title and duration to find lyrics, when you open lyrics or save a track for offline listening.</li>
-                <li><strong>Litres</strong> (<code>api.litres.ru</code>) — audiobook title and author to show the rating and details on an audiobook page.</li>
-                <li><strong>Proxy</strong> (only if you turn it on) — lists of public proxy servers are downloaded from GitHub (<code>raw.githubusercontent.com</code>) and jsDelivr (<code>cdn.jsdelivr.net</code>). With a proxy on, the App’s traffic goes through the proxy server you chose. The traffic stays encrypted (HTTPS), but the proxy’s operator sees your IP address and which servers the App connects to.</li>
+                <li><strong>Deezer</strong> and <strong>iTunes Search</strong> — artist and track title (also of local files on your device) to find album covers, artist photos and album names when VK has none. Which of the two is used is chosen in Settings → Cover source.</li>
+                <li><strong>LRCLIB</strong> — artist, title and duration of a track to find its lyrics.</li>
+                <li><strong>An audiobook information service</strong> — audiobook title and author to show the rating and details on an audiobook page.</li>
+                <li><strong>Proxy</strong> (only if you turn it on) — the App’s traffic goes through a proxy server you chose or one picked from public lists. The traffic stays encrypted (HTTPS), but the proxy’s operator sees your IP address.</li>
             </ul>
             <p>Links to Telegram, Boosty, app stores and VK open in your browser or in those apps; the App does not send them any data.</p>
 
@@ -248,7 +238,7 @@
             <p class="updated">Обновлено: 30 октября 2026 г.</p>
 
             <h2>Кто мы</h2>
-            <p>Muzly («Приложение») — музыкальный плеер для Android и iOS. Разработчик — Александр Алехин, частное лицо («мы»). Связь: <a href="mailto:lolka132@gmail.com">lolka132@gmail.com</a>.</p>
+            <p>Muzly («Приложение») — музыкальный плеер для Android и iOS. Разработчик — частное лицо («мы»). Связь: <a href="mailto:lolka132@gmail.com">lolka132@gmail.com</a>.</p>
             <p>Своих серверов у Muzly нет. Ваша медиатека, плейлисты и история хранятся на устройстве. Приложение обращается к VK и к нескольким открытым сервисам из списка ниже.</p>
 
             <h2>Коротко</h2>
@@ -261,27 +251,17 @@
                 <li>Мы не продаём данные и не показываем рекламу.</li>
             </ul>
 
-            <h2>Вход через VK</h2>
-            <p>Вы входите на странице VK ID (<code>id.vk.ru</code>), которая открывается во встроенном браузере Приложения, и вводите пароль там, а не в Приложении. VK выдаёт Приложению ключи доступа (токены), и Приложение хранит их на устройстве, чтобы вы оставались в аккаунте. Встроенный браузер хранит cookie VK. VK может попросить пройти проверку «Я не робот».</p>
-
-            <h2>Что уходит в VK</h2>
-            <p>Чтобы показывать и играть вашу музыку, Приложение отправляет запросы к VK (<code>api.vk.ru</code>) от вашего имени, с вашей сессией VK:</p>
-            <ul>
-                <li>медиатека, плейлисты, лайки и другие ваши изменения;</li>
-                <li>поисковые запросы;</li>
-                <li>рекомендации и их настройки;</li>
-                <li>прогресс аудиокниг;</li>
-                <li>отчёты о прослушивании — какой трек играл и сколько, такие же, как у официальных музыкальных приложений VK (VK учитывает их в рекомендациях).</li>
-            </ul>
-            <p>В запросах есть сведения об устройстве (в User-Agent: версия Android или iOS, модель, язык, размер экрана) и случайный идентификатор устройства, который Приложение создаёт само. Музыка и картинки загружаются с серверов VK. VK обрабатывает эти данные по своей <a href="https://vk.com/privacy" target="_blank" rel="noopener">политике конфиденциальности</a>.</p>
+            <h2>Вход и VK</h2>
+            <p>Вы входите на странице VK и вводите пароль там — Приложение его не видит. VK выдаёт Приложению ключи доступа (токены), они хранятся на устройстве, чтобы вы оставались в аккаунте.</p>
+            <p>Чтобы показывать и играть вашу музыку, Приложение обращается к VK от вашего имени: загружает медиатеку, плейлисты, рекомендации и аудиокниги, отправляет поисковые запросы, ваши изменения (лайки, плейлисты) и сведения о прослушивании. В запросах есть технические сведения об устройстве (модель, версия системы, язык) и идентификатор, который Приложение создаёт само. VK обрабатывает эти данные по своей <a href="https://vk.com/privacy" target="_blank" rel="noopener">политике конфиденциальности</a>.</p>
 
             <h2>Другие сервисы</h2>
             <p>К этим сервисам Приложение обращается без вашего аккаунта VK и без идентификаторов. Как и любой сайт, они видят ваш IP-адрес.</p>
             <ul>
-                <li><strong>Deezer</strong> (<code>api.deezer.com</code>) и <strong>iTunes Search</strong> (<code>itunes.apple.com</code>) — исполнитель и название трека (в том числе локальных файлов на устройстве), чтобы найти обложку альбома, фото исполнителя и название альбома, когда их нет у VK. Какой из двух сервисов использовать — выбирается в «Настройки → Источник обложек».</li>
-                <li><strong>LRCLIB</strong> (<code>lrclib.net</code>) — исполнитель, название и длительность, чтобы найти текст песни: когда вы открываете текст или сохраняете трек для прослушивания без сети.</li>
-                <li><strong>Литрес</strong> (<code>api.litres.ru</code>) — название и автор аудиокниги, чтобы показать рейтинг и описание на странице книги.</li>
-                <li><strong>Прокси</strong> (только если вы его включили) — списки открытых прокси-серверов загружаются с GitHub (<code>raw.githubusercontent.com</code>) и jsDelivr (<code>cdn.jsdelivr.net</code>). Со включённым прокси трафик Приложения идёт через выбранный вами прокси-сервер. Он остаётся зашифрованным (HTTPS), но владелец прокси видит ваш IP-адрес и то, к каким серверам обращается Приложение.</li>
+                <li><strong>Deezer</strong> и <strong>iTunes Search</strong> — исполнитель и название трека (в том числе локальных файлов на устройстве), чтобы найти обложку, фото исполнителя и название альбома, когда их нет у VK. Источник выбирается в «Настройки → Источник обложек».</li>
+                <li><strong>LRCLIB</strong> — исполнитель, название и длительность трека, чтобы найти текст песни.</li>
+                <li><strong>Сервис сведений об аудиокнигах</strong> — название и автор книги, чтобы показать рейтинг и описание на странице книги.</li>
+                <li><strong>Прокси</strong> (только если вы его включили) — трафик Приложения идёт через прокси-сервер, выбранный вами или подобранный из открытых списков. Он остаётся зашифрованным (HTTPS), но владелец прокси видит ваш IP-адрес.</li>
             </ul>
             <p>Ссылки на Telegram, Boosty, магазины приложений и VK открываются в браузере или в этих приложениях; данных туда Приложение не отправляет.</p>
 

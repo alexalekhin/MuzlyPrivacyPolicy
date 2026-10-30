@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MusicTogether — Privacy Policy</title>
+    <title>Muzly — Privacy Policy / Политика конфиденциальности</title>
     <style>
         :root {
             --bg: #fafafa;
@@ -48,6 +48,26 @@
             padding: 2.5rem 2rem;
         }
 
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: flex-end;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .lang-switch a {
+            padding: 0.15rem 0.6rem;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            color: var(--text-secondary);
+        }
+
+        .lang-switch a.active {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
         h1 {
             font-size: 1.75rem;
             margin-bottom: 0.25rem;
@@ -64,12 +84,6 @@
             margin-top: 2rem;
             margin-bottom: 0.75rem;
             color: var(--accent);
-        }
-
-        h3 {
-            font-size: 1rem;
-            margin-top: 1.25rem;
-            margin-bottom: 0.5rem;
         }
 
         p {
@@ -93,10 +107,26 @@
             text-decoration: underline;
         }
 
+        code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 0.9em;
+        }
+
         .contact {
             margin-top: 2rem;
             padding-top: 1.5rem;
             border-top: 1px solid var(--border);
+        }
+
+        article + article {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Со скриптом показываем один язык; без него — оба подряд. */
+        .js article[hidden] {
+            display: none;
         }
 
         strong {
@@ -119,69 +149,218 @@
 </head>
 <body>
     <div class="container">
-        <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: April 4, 2026</p>
+        <nav class="lang-switch">
+            <a href="#en" data-lang="en">English</a>
+            <a href="#ru" data-lang="ru">Русский</a>
+        </nav>
 
-        <h2>Introduction</h2>
-        <p>This Privacy Policy describes how MusicTogether ("we", "our", or "the App") handles information when you use our mobile application. We are committed to protecting your privacy and being transparent about our data practices.</p>
+        <article id="en" lang="en">
+            <h1>Privacy Policy</h1>
+            <p class="updated">Last updated: October 30, 2026</p>
 
-        <h2>Information We Collect</h2>
+            <h2>Who we are</h2>
+            <p>Muzly (“the App”) is a music player for Android and iOS made by Aleksandr Alekhin, an individual developer (“we”). Contact: <a href="mailto:lolka132@gmail.com">lolka132@gmail.com</a>.</p>
+            <p>Muzly has no servers of its own. Your library, playlists and history are stored on your device. The App talks to VK and to the few public services listed below.</p>
 
-        <h3>Account Credentials</h3>
-        <p>To use the App, you must authenticate with your VK (VKontakte) account. During authentication, your VK credentials are transmitted directly to VK servers via their API. We do not store your VK password on the device or on any external server. An authentication token received from VK is stored locally on your device to maintain your session.</p>
+            <h2>In short</h2>
+            <ul>
+                <li>You sign in on VK’s own page. We never see your VK password.</li>
+                <li>Your library, playlists, history and settings stay on your device.</li>
+                <li>Requests to VK go with your VK session, as in any VK client.</li>
+                <li>Android: crash reports go to Firebase Crashlytics (Google). The Google Play build also sends usage statistics to Firebase Analytics; the Huawei AppGallery build does not.</li>
+                <li>iOS: no analytics and no crash reports.</li>
+                <li>We do not sell data and do not show ads.</li>
+            </ul>
 
-        <h3>Locally Stored Data</h3>
-        <p>The App stores the following data <strong>exclusively on your device</strong> (local storage):</p>
-        <ul>
-            <li><strong>Music library</strong> — metadata of your VK music tracks (title, artist, album, duration)</li>
-            <li><strong>Playlists</strong> — your playlists and their contents</li>
-            <li><strong>Playback queue</strong> — current and recent playback queue</li>
-            <li><strong>Search history</strong> — your in-app search queries</li>
-            <li><strong>Listening history</strong> — tracks you have listened to</li>
-            <li><strong>App settings</strong> — your preferences (e.g., theme, playback settings)</li>
-        </ul>
-        <p>This data is not transmitted to any third-party servers and is not accessible to us.</p>
+            <h2>Signing in with VK</h2>
+            <p>You sign in on the VK ID page (<code>id.vk.ru</code>), opened in the App’s built-in browser, and type your password there, not in the App. VK gives the App access tokens, which the App keeps on your device so that you stay signed in. The built-in browser keeps VK’s cookies. VK may ask you to pass its “I’m not a robot” check.</p>
 
-        <h3>Music Content</h3>
-        <p>The App streams music content from VK servers. Cached audio files are stored locally on your device for playback purposes only.</p>
+            <h2>What is sent to VK</h2>
+            <p>To show and play your music, the App sends requests to VK (<code>api.vk.ru</code>) on your behalf, with your VK session:</p>
+            <ul>
+                <li>your library, playlists, likes and other changes you make;</li>
+                <li>search queries;</li>
+                <li>recommendations and their settings;</li>
+                <li>audiobook progress;</li>
+                <li>listening reports — which track was played and for how long, the same reports the official VK music apps send (VK uses them for recommendations).</li>
+            </ul>
+            <p>Requests carry device details in the User-Agent (Android or iOS version, device model, language, screen size) and a random device identifier that the App generates itself. Music and pictures are downloaded from VK’s content servers. VK processes this data under its own <a href="https://vk.com/privacy" target="_blank" rel="noopener">privacy policy</a>.</p>
 
-        <h2>Information We Do NOT Collect</h2>
-        <ul>
-            <li>We do <strong>not</strong> collect analytics or usage statistics</li>
-            <li>We do <strong>not</strong> use advertising SDKs or tracking technologies</li>
-            <li>We do <strong>not</strong> collect crash reports or diagnostics</li>
-            <li>We do <strong>not</strong> collect your location, contacts, camera, microphone, or any other sensor data</li>
-            <li>We do <strong>not</strong> have our own servers or backend — the App communicates only with VK API</li>
-        </ul>
+            <h2>Other services</h2>
+            <p>The App contacts these services without your VK account and without any identifier. Like any website, they see your IP address.</p>
+            <ul>
+                <li><strong>Deezer</strong> (<code>api.deezer.com</code>) and <strong>iTunes Search</strong> (<code>itunes.apple.com</code>) — artist and track title (also of local files on your device) to find album covers, artist photos and album names when VK has none. Which of the two is used is chosen in Settings → Cover source.</li>
+                <li><strong>LRCLIB</strong> (<code>lrclib.net</code>) — artist, title and duration to find lyrics, when you open lyrics or save a track for offline listening.</li>
+                <li><strong>Litres</strong> (<code>api.litres.ru</code>) — audiobook title and author to show the rating and details on an audiobook page.</li>
+                <li><strong>Proxy</strong> (only if you turn it on) — lists of public proxy servers are downloaded from GitHub (<code>raw.githubusercontent.com</code>) and jsDelivr (<code>cdn.jsdelivr.net</code>). With a proxy on, the App’s traffic goes through the proxy server you chose. The traffic stays encrypted (HTTPS), but the proxy’s operator sees your IP address and which servers the App connects to.</li>
+            </ul>
+            <p>Links to Telegram, Boosty, app stores and VK open in your browser or in those apps; the App does not send them any data.</p>
 
-        <h2>Third-Party Services</h2>
-        <p>The App interacts with the following third-party service:</p>
-        <ul>
-            <li><strong>VK (VKontakte)</strong> — for user authentication and accessing your music library. Your use of VK is subject to <a href="https://vk.com/privacy" target="_blank" rel="noopener">VK's Privacy Policy</a>.</li>
-        </ul>
+            <h2>Crash reports and statistics (Android only)</h2>
+            <ul>
+                <li><strong>Firebase Crashlytics — every Android build.</strong> When the App crashes, a report is sent to Google: the error and where it happened, device model, Android version, App version, free memory and storage, the time, and a random Firebase installation ID. Crashlytics also records App sessions to count how many users are not affected by crashes. We use this only to fix bugs. Crash reports are kept for 90 days.</li>
+                <li><strong>Firebase Analytics — only the Google Play build.</strong> Events of a few features (for example, the support message and the choice of app icon) and the data Firebase Analytics collects by itself: App instance ID, device model, OS version, language and approximate country by IP address. The advertising ID is not collected. <strong>The Huawei AppGallery build has no Firebase Analytics.</strong></li>
+            </ul>
+            <p>Neither of them receives your VK account, name, tokens or listening history. Firebase is run by Google LLC, and the data may be processed on servers outside your country — see <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy information</a>.</p>
+            <p>The iOS app has no Firebase, analytics or crash reporting.</p>
 
-        <h2>Data Storage and Security</h2>
-        <p>All user data is stored locally on your device using encrypted storage mechanisms provided by the Android platform. No data is transmitted to external servers other than VK API for authentication and music streaming purposes.</p>
+            <h2>What is stored on your device</h2>
+            <ul>
+                <li>Your VK account: user ID, name, photo link and session tokens.</li>
+                <li>Your library, playlists, play queue, listening and search history, audiobook progress.</li>
+                <li>Music, covers and lyrics saved for offline listening.</li>
+                <li>Settings, including proxy servers you added (with their login and password, if you entered them).</li>
+            </ul>
+            <p><strong>Music on your device.</strong> On Android, with your permission, the App reads the audio files on your device; on iOS — your Apple Music library and the folders you give access to in the Files app. This is used only to show and play those songs. Their details are not sent anywhere, except artist and title to the cover services above.</p>
+            <p>On Android, the App’s data is not copied to cloud backups (Google Drive). When you move to a new phone directly (by cable or Wi-Fi), Android transfers it to the new phone. On iOS, your VK session is not included in iCloud or computer backups: after restoring to a new iPhone, sign in again.</p>
 
-        <h2>Data Retention and Deletion</h2>
-        <p>Since all data is stored locally on your device:</p>
-        <ul>
-            <li>You can clear all App data at any time through your device's <strong>Settings → Apps → MusicTogether → Clear Data</strong></li>
-            <li>Uninstalling the App will remove all locally stored data</li>
-            <li>We do not retain any of your data on external servers</li>
-        </ul>
+            <h2>Permissions (Android)</h2>
+            <ul>
+                <li>Network access — to play music.</li>
+                <li>Audio files / storage — to play music from your device; asked only when you open it.</li>
+                <li>Foreground service — to keep music playing and downloads going with the screen off.</li>
+                <li>Start after reboot — to resume unfinished downloads.</li>
+            </ul>
 
-        <h2>Children's Privacy</h2>
-        <p>The App is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
+            <h2>Deleting your data</h2>
+            <ul>
+                <li><strong>Sign out</strong> (Settings → Sign out) removes the account’s tokens, library, queue and search history from the device. “Remove account” in the account list does the same for one account.</li>
+                <li><strong>Settings → Clear data</strong> removes the library, saved music, covers and local tracks.</li>
+                <li>Uninstalling the App or clearing its storage in system settings removes everything.</li>
+                <li>Your VK data (library, listening history) is kept by VK; manage or delete it in VK — see <a href="https://vk.com/support" target="_blank" rel="noopener">VK support</a>.</li>
+                <li>Firebase data is not linked to your name or VK account, so we cannot find it by them. It is deleted automatically when its storage period ends; clearing the App’s storage resets the Firebase installation ID. You can also write to us.</li>
+            </ul>
 
-        <h2>Changes to This Privacy Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Any changes will be reflected by updating the "Last updated" date at the top of this document. We encourage you to review this Privacy Policy periodically.</p>
+            <h2>Children</h2>
+            <p>The App is not intended for children under 13. We do not knowingly collect data from children.</p>
 
-        <div class="contact">
-            <h2>Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-            <p><strong>Email:</strong> <a href="mailto:lolka132@gmail.com">lolka132@gmail.com</a></p>
-        </div>
+            <h2>Changes</h2>
+            <p>We will update this page when the App’s data handling changes and change the date at the top.</p>
+
+            <div class="contact">
+                <h2>Contact</h2>
+                <p>Email: <a href="mailto:lolka132@gmail.com">lolka132@gmail.com</a> · Telegram: <a href="https://t.me/muzly_app" target="_blank" rel="noopener">t.me/muzly_app</a></p>
+            </div>
+        </article>
+
+        <article id="ru" lang="ru">
+            <h1>Политика конфиденциальности</h1>
+            <p class="updated">Обновлено: 30 октября 2026 г.</p>
+
+            <h2>Кто мы</h2>
+            <p>Muzly («Приложение») — музыкальный плеер для Android и iOS. Разработчик — Александр Алехин, частное лицо («мы»). Связь: <a href="mailto:lolka132@gmail.com">lolka132@gmail.com</a>.</p>
+            <p>Своих серверов у Muzly нет. Ваша медиатека, плейлисты и история хранятся на устройстве. Приложение обращается к VK и к нескольким открытым сервисам из списка ниже.</p>
+
+            <h2>Коротко</h2>
+            <ul>
+                <li>Вы входите на странице самого VK. Ваш пароль от VK мы не видим.</li>
+                <li>Медиатека, плейлисты, история и настройки остаются на устройстве.</li>
+                <li>Запросы к VK идут с вашей сессией VK, как у любого клиента VK.</li>
+                <li>Android: отчёты о сбоях уходят в Firebase Crashlytics (Google). Сборка из Google Play ещё и отправляет статистику использования в Firebase Analytics; в сборке для Huawei AppGallery её нет.</li>
+                <li>iOS: ни аналитики, ни отчётов о сбоях.</li>
+                <li>Мы не продаём данные и не показываем рекламу.</li>
+            </ul>
+
+            <h2>Вход через VK</h2>
+            <p>Вы входите на странице VK ID (<code>id.vk.ru</code>), которая открывается во встроенном браузере Приложения, и вводите пароль там, а не в Приложении. VK выдаёт Приложению ключи доступа (токены), и Приложение хранит их на устройстве, чтобы вы оставались в аккаунте. Встроенный браузер хранит cookie VK. VK может попросить пройти проверку «Я не робот».</p>
+
+            <h2>Что уходит в VK</h2>
+            <p>Чтобы показывать и играть вашу музыку, Приложение отправляет запросы к VK (<code>api.vk.ru</code>) от вашего имени, с вашей сессией VK:</p>
+            <ul>
+                <li>медиатека, плейлисты, лайки и другие ваши изменения;</li>
+                <li>поисковые запросы;</li>
+                <li>рекомендации и их настройки;</li>
+                <li>прогресс аудиокниг;</li>
+                <li>отчёты о прослушивании — какой трек играл и сколько, такие же, как у официальных музыкальных приложений VK (VK учитывает их в рекомендациях).</li>
+            </ul>
+            <p>В запросах есть сведения об устройстве (в User-Agent: версия Android или iOS, модель, язык, размер экрана) и случайный идентификатор устройства, который Приложение создаёт само. Музыка и картинки загружаются с серверов VK. VK обрабатывает эти данные по своей <a href="https://vk.com/privacy" target="_blank" rel="noopener">политике конфиденциальности</a>.</p>
+
+            <h2>Другие сервисы</h2>
+            <p>К этим сервисам Приложение обращается без вашего аккаунта VK и без идентификаторов. Как и любой сайт, они видят ваш IP-адрес.</p>
+            <ul>
+                <li><strong>Deezer</strong> (<code>api.deezer.com</code>) и <strong>iTunes Search</strong> (<code>itunes.apple.com</code>) — исполнитель и название трека (в том числе локальных файлов на устройстве), чтобы найти обложку альбома, фото исполнителя и название альбома, когда их нет у VK. Какой из двух сервисов использовать — выбирается в «Настройки → Источник обложек».</li>
+                <li><strong>LRCLIB</strong> (<code>lrclib.net</code>) — исполнитель, название и длительность, чтобы найти текст песни: когда вы открываете текст или сохраняете трек для прослушивания без сети.</li>
+                <li><strong>Литрес</strong> (<code>api.litres.ru</code>) — название и автор аудиокниги, чтобы показать рейтинг и описание на странице книги.</li>
+                <li><strong>Прокси</strong> (только если вы его включили) — списки открытых прокси-серверов загружаются с GitHub (<code>raw.githubusercontent.com</code>) и jsDelivr (<code>cdn.jsdelivr.net</code>). Со включённым прокси трафик Приложения идёт через выбранный вами прокси-сервер. Он остаётся зашифрованным (HTTPS), но владелец прокси видит ваш IP-адрес и то, к каким серверам обращается Приложение.</li>
+            </ul>
+            <p>Ссылки на Telegram, Boosty, магазины приложений и VK открываются в браузере или в этих приложениях; данных туда Приложение не отправляет.</p>
+
+            <h2>Отчёты о сбоях и статистика (только Android)</h2>
+            <ul>
+                <li><strong>Firebase Crashlytics — во всех сборках для Android.</strong> Когда Приложение падает, отчёт уходит в Google: ошибка и место, где она случилась, модель устройства, версия Android, версия Приложения, свободная память и место на диске, время и случайный идентификатор установки Firebase. Ещё Crashlytics отмечает сеансы работы Приложения, чтобы считать, у скольких пользователей не было сбоев. Мы используем это только для исправления ошибок. Отчёты хранятся 90 дней.</li>
+                <li><strong>Firebase Analytics — только сборка из Google Play.</strong> События нескольких функций (например, сообщение о поддержке и выбор иконки приложения) и данные, которые Firebase Analytics собирает сам: идентификатор экземпляра Приложения, модель устройства, версия системы, язык и примерная страна по IP-адресу. Рекламный идентификатор не собирается. <strong>В сборке для Huawei AppGallery Firebase Analytics нет.</strong></li>
+            </ul>
+            <p>Ни туда, ни туда не попадают ваш аккаунт VK, имя, токены и история прослушивания. Firebase принадлежит Google LLC, данные могут обрабатываться на серверах за пределами вашей страны — см. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">сведения о конфиденциальности Firebase</a>.</p>
+            <p>В приложении для iOS нет ни Firebase, ни аналитики, ни отчётов о сбоях.</p>
+
+            <h2>Что хранится на устройстве</h2>
+            <ul>
+                <li>Аккаунт VK: ID пользователя, имя, ссылка на фото и токены сессии.</li>
+                <li>Медиатека, плейлисты, очередь, история прослушивания и поиска, прогресс аудиокниг.</li>
+                <li>Музыка, обложки и тексты, сохранённые для прослушивания без сети.</li>
+                <li>Настройки, в том числе добавленные вами прокси-серверы (с логином и паролем, если вы их указали).</li>
+            </ul>
+            <p><strong>Музыка на устройстве.</strong> На Android с вашего разрешения Приложение читает аудиофайлы на устройстве; на iOS — медиатеку Apple Music и папки, к которым вы дали доступ в приложении «Файлы». Это нужно только чтобы показывать и играть эти песни. Их данные никуда не отправляются, кроме исполнителя и названия — в сервисы обложек выше.</p>
+            <p>На Android данные Приложения не попадают в облачные резервные копии (Google Диск). При переносе на новый телефон напрямую (кабелем или по Wi-Fi) Android переносит их на новый телефон. На iOS сессия VK не попадает в резервные копии iCloud и компьютера: после восстановления на новом iPhone войдите заново.</p>
+
+            <h2>Разрешения (Android)</h2>
+            <ul>
+                <li>Доступ к сети — чтобы играть музыку.</li>
+                <li>Аудиофайлы / хранилище — чтобы играть музыку с устройства; спрашивается, только когда вы её открываете.</li>
+                <li>Работа на переднем плане (foreground service) — чтобы музыка и загрузки не прерывались при выключенном экране.</li>
+                <li>Запуск после перезагрузки — чтобы продолжить незавершённые загрузки.</li>
+            </ul>
+
+            <h2>Как удалить данные</h2>
+            <ul>
+                <li><strong>Выход</strong> («Настройки → Выйти») удаляет с устройства токены аккаунта, его медиатеку, очередь и историю поиска. «Удалить аккаунт» в списке аккаунтов делает то же для одного аккаунта.</li>
+                <li><strong>«Настройки → Очистка данных»</strong> удаляет медиатеку, сохранённую музыку, обложки и локальные треки.</li>
+                <li>Удаление Приложения или очистка его данных в настройках системы удаляет всё.</li>
+                <li>Ваши данные в VK (медиатека, история прослушивания) хранит VK; управлять ими и удалить их можно в VK — см. <a href="https://vk.com/support" target="_blank" rel="noopener">поддержку VK</a>.</li>
+                <li>Данные Firebase не связаны с вашим именем и аккаунтом VK, поэтому найти их по ним мы не можем. Они удаляются автоматически по истечении срока хранения; очистка данных Приложения сбрасывает идентификатор установки Firebase. Можно и написать нам.</li>
+            </ul>
+
+            <h2>Дети</h2>
+            <p>Приложение не предназначено для детей младше 13 лет. Мы сознательно не собираем данные детей.</p>
+
+            <h2>Изменения</h2>
+            <p>Когда Приложение начнёт обращаться с данными иначе, мы обновим эту страницу и дату вверху.</p>
+
+            <div class="contact">
+                <h2>Связь</h2>
+                <p>Почта: <a href="mailto:lolka132@gmail.com">lolka132@gmail.com</a> · Telegram: <a href="https://t.me/muzly_app" target="_blank" rel="noopener">t.me/muzly_app</a></p>
+            </div>
+        </article>
     </div>
+
+    <script>
+        // Один язык на экране: #ru / #en в адресе, иначе — язык браузера.
+        (function () {
+            document.documentElement.classList.add('js');
+            var articles = document.querySelectorAll('article');
+            var links = document.querySelectorAll('.lang-switch a');
+
+            function show(lang) {
+                articles.forEach(function (a) { a.hidden = a.id !== lang; });
+                links.forEach(function (l) { l.classList.toggle('active', l.dataset.lang === lang); });
+                document.documentElement.lang = lang;
+            }
+
+            function fromHash() {
+                var h = location.hash.replace('#', '');
+                return h === 'ru' || h === 'en' ? h : null;
+            }
+
+            var browser = (navigator.language || '').toLowerCase().indexOf('ru') === 0 ? 'ru' : 'en';
+            show(fromHash() || browser);
+            window.addEventListener('hashchange', function () {
+                var lang = fromHash();
+                if (lang) {
+                    show(lang);
+                    window.scrollTo(0, 0);
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
